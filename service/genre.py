@@ -3,11 +3,18 @@
 # но чаще всего будет какая-то логика обработки данных сейчас или в будущем.
 
 # Пример
+from typing import List
 
-# class BookService:
-#
-#     def __init__(self, book_dao: BookDAO):
-#         self.book_dao = book_dao
-#
-#     def get_books(self) -> List["Book"]:
-#         return self.book_dao.get_books()
+from dao.genre import GenreDAO
+
+
+class GenreService:
+
+    def __init__(self, genre_dao: GenreDAO):
+        self.genre_dao = genre_dao
+
+    def get_genres(self):
+        return self.genre_dao.get_all_genres()
+
+    def get_genre_by_id(self, uid):
+        return self.genre_dao.get_genre_by_id(uid)
