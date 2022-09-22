@@ -26,7 +26,6 @@ class MovieDAO:
             self.session.rollback()
             return False
 
-
     def update_movie(self, **kwargs):
         try:
             self.session.query(Movie).filter(Movie.id == kwargs.get('id')).update(
